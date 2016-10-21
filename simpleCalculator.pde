@@ -24,25 +24,34 @@ public void handleButtonEvents(GButton calculate, GEvent event) {
    x = float(input1.getText());
    y = float(input2.getText());
  
-  answer.setText("Ssss");  
 
   if (operator.equals ("+")) {
     answer.setText(str(x+y));
   }
   
-  if (operator.equals("-")){
+  else if (operator.equals("-")){
     answer.setText(str(x-y));
   }
   
-  if (operator.equals("*")){
+  else if (operator.equals("*")){
     answer.setText(str(x*y));
   }
   
-  if (operator.equals("/")){
+  else if (operator.equals("/")){
     answer.setText(str(x/y));
   }
   
-  else{
-    
+  else {
+    answer.setText("ERROR");
+  }
+  
+  if(x/x != 1){
+    answer.setText("ERROR");
+  }
+  if(y/y != 1){
+    answer.setText("ERROR");
+  }
+  if(x == 0 && y == 0){
+    answer.setText("INFINITY");
   }
   }
